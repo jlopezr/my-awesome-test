@@ -8,7 +8,7 @@
     "build": "tsc",
     "build-watch": "tsc --watch",
     "test": "jest --coverage --config jestconfig.json",
-    "coveralls": "npm test && cat ./tests/coverage/lcov.info | coveralls",
+    "coveralls": "npm test && cat ./coverage/lcov.info | coveralls",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
