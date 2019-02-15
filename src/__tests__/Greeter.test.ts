@@ -5,5 +5,5 @@ test('My Greeter', () => {
 });
 
 test('Mi Saludador', () => {
-  expect(Saludador('Juan')).toBe('Hola Carl');
+  expect(Saludador('Juan')).toBe('Hola Juan');
 });
