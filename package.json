@@ -1,0 +1,42 @@
+{
+  "name": "my-awesome-test",
+  "version": "1.0.0",
+  "description": "A nice greeter",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",  
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --config jestconfig.json",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm test && npm run lint",
+    "preversion" : "npm run lint",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlopezr/my-awesome-test.git"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "keywords": ["Hello", "Greeter"],
+  "author": "jlopezr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlopezr/my-awesome-test/issues"
+  },
+  "homepage": "https://github.com/jlopezr/my-awesome-test#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.5",
+    "jest": "^24.1.0",
+    "prettier": "^1.16.4",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3"
+  }
+}
