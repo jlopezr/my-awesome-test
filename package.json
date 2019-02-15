@@ -3,18 +3,23 @@
   "version": "1.0.0",
   "description": "A nice greeter",
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",  
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest --config jestconfig.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "prepare" : "npm run build",
-    "prepublishOnly" : "npm test && npm run lint",
-    "preversion" : "npm run lint",
-    "version" : "npm run format && git add -A src",
-    "postversion" : "git push && git push --tags"
-
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
+    }
   },
   "repository": {
     "type": "git",
@@ -23,7 +28,10 @@
   "files": [
     "lib/**/*"
   ],
-  "keywords": ["Hello", "Greeter"],
+  "keywords": [
+    "Hello",
+    "Greeter"
+  ],
   "author": "jlopezr",
   "license": "ISC",
   "bugs": {
@@ -32,6 +40,7 @@
   "homepage": "https://github.com/jlopezr/my-awesome-test#readme",
   "devDependencies": {
     "@types/jest": "^24.0.5",
+    "husky": "^1.3.1",
     "jest": "^24.1.0",
     "prettier": "^1.16.4",
     "ts-jest": "^23.10.5",
