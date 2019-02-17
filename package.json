@@ -17,7 +17,7 @@
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags",
     "typedoc": "typedoc --out ./docs --mode modules --tsconfig ./tsconfig.json ./src/",
-    "clean": "shx rm -rf node_modules/ lib/ docs/"
+    "clean": "shx rm -rf node_modules/ lib/ docs/ coverage/"
   },
   "husky": {
     "hooks": {
